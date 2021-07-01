@@ -1,25 +1,36 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormBuilder,FormGroup, Validators } from '@angular/forms';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SesionComponentComponent } from './sesion-component/sesion-component.component';
-import { RestaurarPasswordComponentComponent } from './restaurar-password-component/restaurar-password-component.component';
-import { RegistroUsuarioComponentComponent } from './registro-usuario-component/registro-usuario-component.component';
-import { ProductoComponentComponent } from './producto-component/producto-component.component';
-import { HeaderComponentComponent } from './header-component/header-component.component';
+import { HeaderComponent } from './Components/header/header.component';
+import { RegistroUsuarioComponent } from './Components/registro-usuario/registro-usuario.component';
+import { ProductoComponent } from './Components/producto/producto.component';
+import { SesionUsuarioComponent } from './Components/sesion-usuario/sesion-usuario.component';
+import { HomeComponent } from './Components/home/home.component';
+import { CarritoComponent } from './Components/carrito/carrito.component';
+import { ErrorComponent } from './Components/error/error.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SesionComponentComponent,
-    RestaurarPasswordComponentComponent,
-    RegistroUsuarioComponentComponent,
-    ProductoComponentComponent,
-    HeaderComponentComponent
+    HeaderComponent,
+    RegistroUsuarioComponent,
+    ProductoComponent,
+    SesionUsuarioComponent,
+    HomeComponent,
+    CarritoComponent,
+    ErrorComponent,
   ],
   imports: [
-    BrowserModule
-  ],
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule  ],
   providers: [],
   bootstrap: [AppComponent]
 })

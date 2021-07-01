@@ -1,0 +1,56 @@
+<!-- Modal -->
+<div class="modal fade" id="registro">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registroLabel">¡Únete ahora! </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="usuarioForm" (ngSubmite)="agregarUsuario()">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email:</label>
+                  <input type="email" formGroupName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="correo.electronico@dominio.com">
+                </div>
+                <div class="text-danger" *ngIf="usuarioForm.get('email').hasError('required')">
+                    <span>El campo es requerido</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Nombre</label>
+                    <input type="text" formGroupName="nombre" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su nombre">
+                  </div>
+                  <div class="text-danger" *ngIf="usuarioForm.get('nombre').hasError('required')">
+                    <span>El campo es requerido</span>
+                </div>
+                  <div class="form-group" *ngIf="usuarioForm.get('nombre').hasError('required')">
+                    <label for="exampleInputPassword1">Apellido</label>
+                    <input type="text" formGroupName="apellido" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su apellido">
+                  </div>
+                  <div class="text-danger" *ngIf="usuarioForm.get('nombre').hasError('required')">
+                    <span>El campo es requerido</span>
+                  </div>
+                  <div class="form-group" *ngIf="usuarioForm.get('nombre').hasError('required')">
+                    <label for="exampleInputPassword1">Direccion</label>
+                    <input type="text" formGroupName="direccion" class="form-control" id="exampleInputPassword1" placeholder="Ingrese direccion">
+                  </div>
+                  <div class="text-danger">
+                    <span>El campo no es requerido</span>
+                  </div>
+                  <div class="form-group" *ngIf="usuarioForm.get('nombre').hasError('required')">
+                    <label for="exampleInputPassword1">Contraseña</label>
+                    <input type="password" formGroupName="contrasenia"  class="form-control" id="exampleInputPassword1" placeholder="Ingrese contraseña">
+                  </div>
+                  <div class="text-danger" *ngIf="usuarioForm.get('nombre').hasError('required')">
+                    <span>No cumple con los requeridos</span>
+                  </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-info">Enviar</button>
+                  </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
