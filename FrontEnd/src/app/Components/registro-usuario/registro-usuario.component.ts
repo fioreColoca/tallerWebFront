@@ -26,6 +26,7 @@ export class RegistroUsuarioComponent implements OnInit {
 
   agregarUsuario(){
     console.log(this.usuarioForm)
+    /* no devuelve nada por consola. entonces no muetsra validacion*/
   }
 
 }

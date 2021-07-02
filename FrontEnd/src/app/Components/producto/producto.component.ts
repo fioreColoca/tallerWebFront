@@ -18,6 +18,7 @@ export class ProductoComponent implements OnInit {
   obtenerProductos(){
     this._productoService.getProduct().subscribe(data => {
       console.log(data);
+/* no devuelve nada por consola */
       this.listarProductos = data;
     }, error =>{
       console.log(error);
