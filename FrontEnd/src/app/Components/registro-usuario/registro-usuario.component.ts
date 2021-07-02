@@ -20,6 +20,7 @@ export class RegistroUsuarioComponent implements OnInit {
       direccion:['', Validators.required],
     });
   }
+  
   ngOnInit(): void {
   }
 

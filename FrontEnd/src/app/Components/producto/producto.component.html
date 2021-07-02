@@ -1,46 +1,21 @@
 
-            <div class="center">
+            <div class="center" *ngFor="let Producto of  listarProductos">
             <h3 class="text-center mt-5">Listado de productos</h3>
             <div class="container text-center">
               <div class="row center">
                  <div class="card m-3" style="width: 18rem;">
                       <img class="card-img-top" class="image" alt=" ">
                         <div class="card-body">
-                            <h3>Precio</h3>
-                            <h5>Nombre</h5>
+                            <h3>{{Producto.precio}}</h3>
+                            <h5>{{Producto.nombre}}</h5>
                             <hr>
-                            <p>descripcion, clasificacion</p>
+                            <p>{{Producto.clasificacion}}, {{Producto.descripcion}}</p>
 
                             <a href="#" class="btn btn-outline-success">Comprar</a>
                         </div>
                    </div>
 
-                   <div class="card m-3" style="width: 18rem;">
-                    <img class="card-img-top" class="image" alt=" ">
-                      <div class="card-body">
-                          <h3>Precio</h3>
-                          <h5>Nombre</h5>
-                          <hr>
-                          <p>descripcion, clasificacion</p>
-
-                          <a href="#" class="btn btn-outline-success">Comprar</a>
-                      </div>
-                   </div>
-
-                   <div class="card m-3" style="width: 18rem;">
-                    <img class="card-img-top" class="image" alt=" ">
-                      <div class="card-body">
-                          <h3>Precio</h3>
-                          <h5>Nombre</h5>
-                          <hr>
-                          <p>descripcion, clasificacion</p>
-
-                          <a href="#" class="btn btn-outline-success">Comprar</a>
-                      </div>
-                   </div>
-
-               </div>
               </div>
             </div>
-            <div>
+          </div>
 

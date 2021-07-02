@@ -1,5 +1,3 @@
-import { IncomingHttpHeaders } from "http";
-import * as internal from "stream";
 
 export class Producto{
     nombre:string;
