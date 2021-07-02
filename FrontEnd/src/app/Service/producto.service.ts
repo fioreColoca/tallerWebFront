@@ -8,10 +8,12 @@ import { Observable } from 'rxjs';
 export class ProductoService {
 
   url = 'http://localhost:4000/api/product/';
+
   constructor(private http: HttpClient) { }
 
     getProduct(): Observable<any> {
-      return this.http.get(this.url);
+      const data= this.http.get(this.url);
+      return data;
     }
   }
 

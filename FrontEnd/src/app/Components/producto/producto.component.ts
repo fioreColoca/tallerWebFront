@@ -9,17 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductoComponent implements OnInit {
   
-  listarProductos: Producto[]=[];
+  listaProductos: Producto[]=[];
   constructor(private _productoService : ProductoService) { }
 
   ngOnInit(): void {
+    this.obtenerProductos();
   }
 
   obtenerProductos(){
     this._productoService.getProduct().subscribe(data => {
-      console.log(data);
+     
 /* no devuelve nada por consola */
-      this.listarProductos = data;
+      this.listaProductos = data.items;
+
     }, error =>{
       console.log(error);
     })
