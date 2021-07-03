@@ -17,9 +17,8 @@ export class ProductoComponent implements OnInit {
   }
 
   obtenerProductos(){
-    this._productoService.getProduct().subscribe(data => {
-     
-/* no devuelve nada por consola */
+    this._productoService.getProducts().subscribe(data => {
+  
       this.listaProductos = data.items;
 
     }, error =>{

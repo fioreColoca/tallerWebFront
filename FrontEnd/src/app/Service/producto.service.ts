@@ -11,8 +11,12 @@ export class ProductoService {
 
   constructor(private http: HttpClient) { }
 
-    getProduct(): Observable<any> {
+    getProducts(): Observable<any> {
       const data= this.http.get(this.url);
+      return data;
+    }
+    getProduct(id): Observable<any> {
+      const data= this.http.get(this.url+`${id}`);
       return data;
     }
   }

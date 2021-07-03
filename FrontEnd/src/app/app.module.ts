@@ -12,6 +12,7 @@ import { SesionUsuarioComponent } from './Components/sesion-usuario/sesion-usuar
 import { HomeComponent } from './Components/home/home.component';
 import { CarritoComponent } from './Components/carrito/carrito.component';
 import { ErrorComponent } from './Components/error/error.component';
+import { ProductoDetalleComponent } from './Components/producto-detalle/producto-detalle.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ErrorComponent } from './Components/error/error.component';
     HomeComponent,
     CarritoComponent,
     ErrorComponent,
+    ProductoDetalleComponent,
   ],
   imports: [
     BrowserModule,

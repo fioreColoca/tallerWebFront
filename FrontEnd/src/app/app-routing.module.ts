@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CarritoComponent } from './Components/carrito/carrito.component';
 import { RegistroUsuarioComponent } from './Components/registro-usuario/registro-usuario.component';
+import { ProductoDetalleComponent } from './Components/producto-detalle/producto-detalle.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'Carrito', component: CarritoComponent },
   { path: 'Error', component: ErrorComponent },
   { path: 'Signup', component: RegistroUsuarioComponent },
+  { path: 'Detalle/:id', component: ProductoDetalleComponent },
   { path: '**', redirectTo:'Error' , pathMatch:'full' }
 ];
 
