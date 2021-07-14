@@ -1,6 +1,8 @@
 import { Usuario } from './../../Models/Usuario';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/Service/usuario.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js';  
 
 @Component({
   selector: 'app-registro-usuario',
@@ -10,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class RegistroUsuarioComponent implements OnInit {
 
   usuarioForm: FormGroup;
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder,private _usuarioService: UsuarioService) { 
 
     this.usuarioForm = this.fb.group({
       nombre: ['',[Validators.required]],
@@ -22,11 +24,21 @@ export class RegistroUsuarioComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    
   }
 
   agregarUsuario(){
-    console.log(this.usuarioForm)
-    /* no devuelve nada por consola. entonces no muetsra validacion*/
+    const {nombre,apellido,email,contrasenia,direccion}=this.usuarioForm.value;
+    const user = new Usuario(email,contrasenia,nombre,apellido,direccion);
+    console.log(user);
+    this._usuarioService.createUser(user).subscribe(data=>{
+      const {ok,msg}=data;
+      if(ok){
+        Swal.fire("Nuevo usuario","Usuario creado correctamente. Por favor confirme su email.","success")
+      }else{
+        Swal.fire("Nuevo usuario",msg,"error")
+      }
+    });
   }
 
 }

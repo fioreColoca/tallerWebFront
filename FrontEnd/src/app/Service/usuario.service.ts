@@ -13,9 +13,9 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) { }
 
-    crateUser(user:Usuario): Observable<any> {
+    createUser(user:Usuario): Observable<any> {
       const headers = { 'content-type': 'application/json'} 
-      return this.http.post(this.url+"signin",JSON.stringify(user),{'headers':headers});
+      return this.http.post(this.url+"signup",JSON.stringify(user),{'headers':headers});
       
     }
   }

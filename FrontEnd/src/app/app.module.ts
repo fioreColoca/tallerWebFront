@@ -13,6 +13,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { CarritoComponent } from './Components/carrito/carrito.component';
 import { ErrorComponent } from './Components/error/error.component';
 import { ProductoDetalleComponent } from './Components/producto-detalle/producto-detalle.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -32,8 +33,10 @@ import { ProductoDetalleComponent } from './Components/producto-detalle/producto
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule  ],
+    HttpClientModule,
+  SweetAlert2Module.forRoot()  ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }
