@@ -36,7 +36,7 @@ export class RegistroUsuarioComponent implements OnInit {
       if(ok){
         Swal.fire("Nuevo usuario","Usuario creado correctamente. Por favor confirme su email.","success")
       }else{
-        Swal.fire("Nuevo usuario",msg,"error")
+        Swal.fire("Nuevo usuario","No se pudo crear correctamente. Por favor intente con otro email.","error")
       }
     });
   }
