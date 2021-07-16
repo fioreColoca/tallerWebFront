@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Producto } from 'src/app/Models/Producto';
 import { ProductoService } from 'src/app/Service/producto.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductoCarrito } from 'src/app/Models/ProductoCarrito';
 import { UsuarioService } from 'src/app/Service/usuario.service';
 import Swal from 'sweetalert2';
@@ -23,7 +23,7 @@ export class ProductoDetalleComponent implements OnInit {
   constructor(private aRouter: ActivatedRoute, private _productoService: ProductoService, private router: Router, private fb: FormBuilder, private _usuarioService: UsuarioService) {
     this.id = this.aRouter.snapshot.paramMap.get('id');
     this.productoForm = this.fb.group({
-      cantidad: ['1']
+      cantidad: ['1',[Validators.min(1)]]
 
     });
   }
