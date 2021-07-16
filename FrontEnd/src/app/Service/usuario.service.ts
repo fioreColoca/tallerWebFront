@@ -11,6 +11,7 @@ export class UsuarioService {
 
   url = 'http://localhost:4000/api/user/';
 
+  logueado: boolean = false;
   constructor(private http: HttpClient) { }
 
     createUser(user:Usuario): Observable<any> {
@@ -22,6 +23,18 @@ export class UsuarioService {
     login(email:string,password:string):Observable<any>{
       const headers = { 'content-type': 'application/json'} 
       return this.http.post(this.url+"signin",JSON.stringify({email:email,password:password}),{'headers':headers});
+    }
+
+    isLogin(){
+      if(sessionStorage.getItem("accessToken")){
+        this.logueado = true;
+      }      
+      return this.logueado;
+    }
+
+    cerrarSesion(){
+      sessionStorage.removeItem("accessToken");
+      return this.logueado = false;
     }
 
     validate(accessToken:string):Observable<any>{

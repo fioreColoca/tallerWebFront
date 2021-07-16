@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/Service/usuario.service';
+
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
   }
 
+  isLogueado(){
+    return this._usuarioService.isLogin();
+  }
+
+  cerrarSesion(){
+    this._usuarioService.cerrarSesion();
+  }
 }
