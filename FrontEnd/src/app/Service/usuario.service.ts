@@ -32,9 +32,18 @@ export class UsuarioService {
       return this.logueado;
     }
 
-    cerrarSesion(){
+    cerrarSesion():Observable<any>{
+      const accessToken = sessionStorage.getItem("accessToken");
+      const idToken = sessionStorage.getItem("idToken");
+      const refreshToken = sessionStorage.getItem("refreshToken");
+      const headers = { 'content-type': 'application/json','x-accessToken' : accessToken, 'x-idToken' : idToken ,'x-refreshToken' : refreshToken }
+
       sessionStorage.removeItem("accessToken");
-      return this.logueado = false;
+      sessionStorage.removeItem("idToken");
+      sessionStorage.removeItem("refreshToken");
+      this.logueado = false;
+      return this.http.get(this.url+"logout",{'headers':headers},);
+
     }
 
     validate(accessToken:string):Observable<any>{

@@ -35,7 +35,7 @@ export class CarritoComponent implements OnInit {
           this.router.navigate(["Home"])
         });
       },error=>{
-        Swal.fire("Error","Error al crear la orden.","error");
+        Swal.fire("Error","Orden al crear la orden.","error");
       });
      
     }else{

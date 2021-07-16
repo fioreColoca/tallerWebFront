@@ -2,7 +2,6 @@
   <div class="nav-wrapper blue-grey darken-4">
     <a href="#" class="brand-logo ml-4">Ecommerce</a>
     <ul class="right hide-on-med-and-down">
-      <li *ngIf="isLogueado()"><h5>Nombre usuario</h5></li>
       <li *ngIf="isLogueado()"> <a class="center-align" routerLink="/Carrito"><i class="fas fa-shopping-cart"></i></a></li>
       <li *ngIf="isLogueado()"><a class="waves-effect  red darken-4 btn" (click)="cerrarSesion()" >Cerrar sesion</a></li>  
        <li *ngIf="!isLogueado()"><a class="waves-effect  indigo lighten-1 btn" routerLink="/Signin">Iniciar sesion</a></li>
