@@ -1,19 +1,20 @@
-<div class="center" >
-  <h3 class="text-center mt-5">Listado de productos</h3>
-  <div class='container text-center' >
-    <div class="row center" >
+<article class="col s12 m9">
+  <h3 class="text-center mt-4">Productos</h3>
+  <div class="col s12 m3 container text-center p-3">
+    <div class="row center">
       <div class="card m-3" style="width: 18rem;" *ngFor="let producto of listaProductos">
-        <img class="card-img-top" class="image" src="{{producto.img}}" width="250" height="250">
+        <img class="card-img-top" class="image p-3" src="{{producto.img}}" width="284" height="284">
         <div class="card-body">
-          <h3>${{producto.price}}</h3>
-          <h5>{{producto.name}}</h5>
+          <h5 class="font-weight-bold">$ {{producto.price}}</h5>
+          <a id="detalle" [routerLink]="['/Detalle',producto.id]">{{producto.name}}</a>
           <hr>
-          <p>{{producto.category}}</p>
+          <!--<p>{{producto.category}}</p>-->
 
-          <a [routerLink]="['/Detalle',producto.id]" class="btn btn-outline-success">Ver mas</a>
+          <a [routerLink]="['/Detalle',producto.id]" class="btn indigo darken-3">Ver mas</a>
         </div>
       </div>
 
     </div>
   </div>
-</div>
+ 
+</article>

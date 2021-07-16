@@ -1,0 +1,13 @@
+#detalle{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+#detalle:hover{
+    font-weight: bold;
+}
+
+a:hover{
+    color: white;
+}
