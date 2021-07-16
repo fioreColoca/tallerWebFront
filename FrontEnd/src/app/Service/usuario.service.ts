@@ -23,5 +23,10 @@ export class UsuarioService {
       const headers = { 'content-type': 'application/json'} 
       return this.http.post(this.url+"signin",JSON.stringify({email:email,password:password}),{'headers':headers});
     }
+
+    validate(accessToken:string):Observable<any>{
+      const headers = { 'content-type': 'application/json','x-accessToken':accessToken} 
+      return this.http.get(this.url+"validate",{'headers':headers},);
+    }
   }
 

@@ -1,6 +1,7 @@
 <h3 class="text-center mt-5"> Carrito </h3>
 
 <div class="container bg-white z-depth-1 p-3">
+
   <div class="col-12 text-center p-5">
     <h3>Tu carrito está vacio</h3>
     <h6>¡Intenta buscar productos que te interesen!</h6>
@@ -8,9 +9,34 @@
 
   <div class="row">
     <div class="col s6 text-right">
-        <a href="https://www.mercadopago.com.ar/home" class="waves-effect waves-green lighten-1 btn indigo darken-3"><i
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of carrito">
+            <td><img src={{item.img}} width="50px" height="50px"></td>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.cantidad}}</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>{{total}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <a class="waves-effect waves-green lighten-1 btn indigo darken-3"><i
+        class="material-icons right">
+    </i>Limpar carrito</a>
+        <button class="waves-effect waves-green lighten-1 btn indigo darken-3" (click)="crearOrden()"><i
                 class="material-icons right">
-            </i>Comprar</a>
+            </i>Comprar</button>
   </div>
   </div>
   </div>
@@ -23,21 +49,4 @@
   </ul>
 </div>
 
-<!--<table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Descripcion</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
-        </tbody>
-      </table>--> 
+<!----> 
