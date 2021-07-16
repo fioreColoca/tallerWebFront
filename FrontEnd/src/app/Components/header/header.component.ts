@@ -21,4 +21,6 @@ export class HeaderComponent implements OnInit {
   cerrarSesion(){
     this._usuarioService.cerrarSesion();
   }
+
+  
 }

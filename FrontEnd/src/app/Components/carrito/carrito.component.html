@@ -4,7 +4,7 @@
 
 <div class="container bg-white z-depth-1 p-3">
 
-  <div class="col-12 text-center p-5">
+  <div class="col-12 text-center p-5" *ngIf="calcularTotal()==0">
     <h3>Tu carrito está vacio</h3>
     <h6>¡Intenta buscar productos que te interesen!</h6>
   </div>
