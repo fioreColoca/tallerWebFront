@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Producto } from 'src/app/Models/Producto';
 import { ProductoService } from 'src/app/Service/producto.service';
 import {Router} from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-producto-detalle',
@@ -13,9 +14,15 @@ export class ProductoDetalleComponent implements OnInit {
 
   id:string
   producto:Producto
+  productoForm: FormGroup;
 
-  constructor(private aRouter:ActivatedRoute,private _productoService : ProductoService,private router:Router) { 
-    this.id=this.aRouter.snapshot.paramMap.get('id')
+
+  constructor(private aRouter:ActivatedRoute,private _productoService : ProductoService,private router:Router,private fb: FormBuilder) { 
+    this.id=this.aRouter.snapshot.paramMap.get('id');
+    this.productoForm = this.fb.group({
+      cantidad: ['1']
+     
+    });
   }
 
   ngOnInit(): void {
@@ -28,8 +35,12 @@ export class ProductoDetalleComponent implements OnInit {
 
       if(this.producto.id==undefined) this.router.navigate(["Error"])
     }, error =>{
-      console.log(error);
+      this.router.navigate(["Error"])
     })
+  }
+
+  agregarAlCarrito(){
+
   }
 
 }

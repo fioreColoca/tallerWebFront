@@ -18,5 +18,10 @@ export class UsuarioService {
       return this.http.post(this.url+"signup",JSON.stringify(user),{'headers':headers});
       
     }
+
+    login(email:string,password:string):Observable<any>{
+      const headers = { 'content-type': 'application/json'} 
+      return this.http.post(this.url+"signin",JSON.stringify({email:email,password:password}),{'headers':headers});
+    }
   }
 
