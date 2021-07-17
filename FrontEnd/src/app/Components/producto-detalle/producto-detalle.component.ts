@@ -56,7 +56,7 @@ export class ProductoDetalleComponent implements OnInit {
           const nuevoCarrito = [productoCarrito]
           sessionStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
         }
-        Swal.fire("Hecho", "Producto agregado al carrito con exito", "success").then(() => {
+        Swal.fire("¡Hecho!", "Producto agregado al carrito con exito", "success").then(() => {
           this.router.navigate(["Carrito"])
         })
       } else {

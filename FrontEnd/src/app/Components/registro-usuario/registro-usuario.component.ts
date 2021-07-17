@@ -34,9 +34,9 @@ export class RegistroUsuarioComponent implements OnInit {
     this._usuarioService.createUser(user).subscribe(data=>{
       const {ok,msg}=data;
       if(ok){
-        Swal.fire("Nuevo usuario","Usuario creado correctamente. Por favor confirme su email.","success")
+        Swal.fire("¡Hecho!","Usuario creado correctamente. Por favor confirme su email","success")
       }else{
-        Swal.fire("Nuevo usuario","No se pudo crear correctamente. Por favor intente con otro email.","error")
+        Swal.fire("Error","No se pudo crear correctamente. Por favor intente con otro email","error")
       }
     });
   }

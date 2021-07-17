@@ -23,17 +23,17 @@ export class CarritoComponent implements OnInit {
       this._usuarioService.validate(token).subscribe(data => {
         const { ok } = data;
         if (!ok) {
-          Swal.fire("Error", "Usuario no logueado.", "error").then(() => {
+          Swal.fire("Error", "Usuario no logueado", "error").then(() => {
             this.router.navigate(["Home"])
           })
         }
       }, error => {
-        Swal.fire("Error", "Usuario no logueado.", "error").then(() => {
+        Swal.fire("Error", "Usuario no logueado", "error").then(() => {
           this.router.navigate(["Home"])
         })
       })
     } else {
-      Swal.fire("Error", "Usuario no logueado.", "error").then(() => {
+      Swal.fire("Error", "Usuario no logueado", "error").then(() => {
         this.router.navigate(["Home"])
       })
     }
@@ -54,17 +54,17 @@ export class CarritoComponent implements OnInit {
   crearOrden() {
     if (this.carrito.length > 0) {
       this._orderService.createOrder(this.carrito).subscribe(data => {
-        Swal.fire("Exito!", "Orden realizada correctamente.", "success").then(() => {
+        Swal.fire("¡Exito!", "Orden realizada correctamente", "success").then(() => {
           this.limpiarCarrito();
           this.router.navigate(["Home"])
         });
       }, error => {
         console.log(error);
-        Swal.fire("Error", "Error al crear la orden.", "error");
+        Swal.fire("Error", "Error al crear la orden", "error");
       });
 
     } else {
-      Swal.fire("Error", "No hay productos en el carrito.", "error");
+      Swal.fire("Error", "No hay productos en el carrito", "error");
     }
 
   }
