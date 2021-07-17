@@ -1,3 +1,24 @@
 a:hover{
     text-decoration: none;
 }
+
+#breadcrumb{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    background-color:none;
+}
+
+nav{
+    padding: 3px;
+}
+
+nav a:hover{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+td{
+    padding-top: 40px;
+}

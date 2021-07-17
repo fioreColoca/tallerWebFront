@@ -56,17 +56,17 @@ export class ProductoDetalleComponent implements OnInit {
           const nuevoCarrito = [productoCarrito]
           sessionStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
         }
-        Swal.fire("Carrito", "Producto agregado al carrito ¿desea confirmar la compra?.", "info").then(() => {
+        Swal.fire("Hecho", "Producto agregado al carrito con exito", "success").then(() => {
           this.router.navigate(["Carrito"])
         })
       } else {
-        Swal.fire("Error", "Debe iniciar sesion para agregar productos al carrito.", "error").then(() => {
+        Swal.fire("Error", "Debe iniciar sesion para agregar productos al carrito", "error").then(() => {
           this.router.navigate(["Signin"])
         })
       }
     }, error => {
       console.log(error);
-      Swal.fire("Error", "Debe iniciar sesion para agregar productos al carrito.", "error").then(() => {
+      Swal.fire("Error", "Debe iniciar sesion para agregar productos al carrito", "error").then(() => {
         this.router.navigate(["Signin"])
       })
     })

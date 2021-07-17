@@ -1,6 +1,7 @@
 <nav>
   <div class="nav-wrapper blue-grey darken-4">
-    <a href="#" class="brand-logo ml-4">Ecommerce</a>
+    <!--<a href="#" class="brand-logo ml-4">Ecommerce</a>-->
+    <a class="black-text" routerLink="/Home" class=""><img src="assets/img/Ecommerce-Logo-Largo.png"></a>
     <ul class="right hide-on-med-and-down">
       <li *ngIf="isLogueado()"> <a class="center-align" routerLink="/Carrito"><i class="fas fa-shopping-cart"></i></a></li>
       <li *ngIf="isLogueado()"><a class="waves-effect  red darken-4 btn" (click)="cerrarSesion()" >Cerrar sesion</a></li>  

@@ -1,5 +1,12 @@
 <app-header></app-header>
 
+<nav aria-label="breadcrumb">
+  <ol id="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/Home">Inicio</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{producto.name}}</li>
+  </ol>
+</nav>
+
 <!--Section: Block Content-->
 <section class="mb-5 mt-5">
 
@@ -7,7 +14,7 @@
     <div class="col-md-6 mb-4 mb-md-0">
       <div class="mdb-lightbox">
 
-        <div class="row product-gallery mx-1">
+        <div class="row product-gallery mx-1 pt-3">
 
           <div class="col-12 mb-0">
             <figure class="view overlay rounded main-img ">
@@ -22,7 +29,7 @@
         <h4 class="font-weight-bold">{{producto.name}}</h4>
         <hr />
         <p class="mb-2 text-muted text-uppercase small">{{producto.category}}</p>
-        <h4><span class="mr-1 font-weight-bold ">${{producto.price}}</span></h4>
+        <h4><span class="mr-1 font-weight-bold ">$ {{producto.price}}</span></h4>
         <p class="pt-1">{{producto.description}}</p>
         <div class="table-responsive">
         </div>
@@ -35,8 +42,6 @@
               </tr>
               <tr>
                 <td class="pl-0">
-
-
                   <input class="quantity" min="0" name="quantity" value="0" type="number" formControlName="cantidad">
                   <div class="text-danger"
                   *ngIf="productoForm.get('cantidad').hasError('min') ">
@@ -56,6 +61,13 @@
       </form>
 
     </div>
+
+    <div class="container p-3">
+      <div class="center">
+        <a routerLink="/Home" class="m-3 z-depth-1 waves-effect waves-light indigo lighten-2 btn">Ver más productos</a>
+      </div>
+    </div>
+    
   </div>
 
 </section>

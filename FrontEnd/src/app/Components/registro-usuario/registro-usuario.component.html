@@ -1,10 +1,10 @@
 <app-header></app-header>
 
-  <h3 class="modal-title text-center p-2" id="registroLabel">¡Únete ahora! </h3>
+  <h3 class="modal-title text-center mt-4 mb-3" id="registroLabel">Registrate</h3>
   
-<div class="row bg-white z-depth-1 m-5 p-2">
-  <div class="modal-body">
-    <form [formGroup]="usuarioForm" (ngSubmit)="agregarUsuario()">
+<div class="row bg-white z-depth-1 p-2">
+  <div class="modal-body m-5">
+    <form [formGroup]="usuarioForm" (ngSubmit)="agregarUsuario()" >
       <div class="form-group">
         <label for="exampleInputEmail1">Email:</label>
         <input type="email" formControlName="email" class="form-control" aria-describedby="emailHelp"
@@ -55,7 +55,7 @@
         <span>La contraseña debe tener 8 caracteres, una mayuscula, una minuscula, un numero y un caracter especial.</span>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-info" [disabled]="usuarioForm.invalid">Enviar</button>
+        <button type="submit" class="btn indigo darken-3" [disabled]="usuarioForm.invalid">Enviar</button>
       </div>
     </form>
   </div>

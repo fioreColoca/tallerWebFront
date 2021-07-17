@@ -1,10 +1,10 @@
 
 <article class="col s12 m9">
-  <h3 class="text-center mt-4">Productos</h3>
+  <h3 class="text-center mt-4 mb-3">Productos</h3>
   <div class="col s12 m3 container text-center p-3">
     <div class="row center">
       <div class="card m-3" style="width: 18rem;" *ngFor="let producto of listaProductos">
-        <img class="card-img-top" class="image p-3" src="{{producto.img}}" width="284" height="284">
+        <img class="card-img-top" class="image p-3 rounded mx-auto d-block" src="{{producto.img}}">
         <div class="card-body">
           <h5 class="font-weight-bold">$ {{producto.price}}</h5>
           <a id="detalle" [routerLink]="['/Detalle',producto.id]">{{producto.name}}</a>
